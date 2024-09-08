@@ -8,7 +8,7 @@ const Header = () => {
   let isAppInstalled = false;
 
   if (window.matchMedia('(display-mode: standalone)').matches || appAccepted) {
-    isAppInstalled = true;
+    isAppInstalled = false;
   }
 
   window.addEventListener('beforeinstallprompt', e => {
@@ -33,6 +33,17 @@ const Header = () => {
       <Menu.Item header>
         <h1>Projeto de negenharia 3 - Quest</h1>
       </Menu.Item>
+      {promptEvent && !isAppInstalled && (
+        <Menu.Item position="right">
+          <Button
+            color="teal"
+            icon="download"
+            labelPosition="left"
+            content="Install App"
+            onClick={installApp}
+          />
+        </Menu.Item>
+      )}
     </Menu>
   );
 };
