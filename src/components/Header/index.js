@@ -33,17 +33,6 @@ const Header = () => {
       <Menu.Item header>
         <h1>Projeto de negenharia 3 - Quest</h1>
       </Menu.Item>
-      {promptEvent && !isAppInstalled && (
-        <Menu.Item position="right">
-          <Button
-            color="teal"
-            icon="download"
-            labelPosition="left"
-            content="Install App"
-            onClick={installApp}
-          />
-        </Menu.Item>
-      )}
     </Menu>
   );
 };
